@@ -1,108 +1,163 @@
-  <h3 align="center">A Subscription Management System API</h3>
-
+<div align="center">
+  <h1>🔄 Subscription Management System API</h1>
+  <p>A robust RESTful API for managing user subscriptions, payments, and automated notifications</p>
+  <div>
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="nodejs" />
+    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express" />
+    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" />
+  </div>
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+## 📑 Table of Contents
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
+- [Overview](#overview)
+- [Key Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+- [API Documentation](#api-documentation)
+- [Project Structure](#structure)
+- [Contributing](#contributing)
 
-## <a name="introduction">🤖 Introduction</a>
+## 🌟 Overview <a name="overview"></a>
 
-Build a **production-ready Subscription Management System API** that handles **real users, real money, and real business logic**.
+This API provides a complete subscription management solution with user authentication, payment processing, and automated email notifications. Built with scalability and security in mind, it offers a robust foundation for subscription-based services.
 
-Authenticate users using JWTs, connect a database, create models and schemas, and integrate it with ORMs. Structure the architecture of your API to ensure scalability and seamless communication with the frontend.
+## 🎯 Key Features <a name="features"></a>
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+- **User Management**
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+  - JWT-based authentication
+  - Role-based access control
+  - User profile management
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+- **Subscription Handling**
 
-- Node.js
-- Express.js
+  - Multiple subscription plans
+  - Payment processing
+  - Subscription status tracking
+  - Automated renewal processing
+
+- **Security**
+
+  - Request rate limiting
+  - Input validation
+  - Error handling middleware
+  - Secure password hashing
+
+- **Notifications**
+  - Automated email reminders
+  - Payment confirmation
+  - Subscription status updates
+  - Custom email templates
+
+## 🛠️ Tech Stack <a name="tech-stack"></a>
+
+- **Runtime Environment:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB with Mongoose ODM
+- **Authentication:** JSON Web Tokens (JWT)
+- **Email Service:** Nodemailer
+- **Task Scheduling:** Upstash Workflows
+- **Development Tools:** ESLint, Nodemon
+
+## 🚀 Getting Started <a name="getting-started"></a>
+
+### Prerequisites <a name="prerequisites"></a>
+
+- Node.js (v18 or higher)
 - MongoDB
+- npm or yarn
+- Git
 
-## <a name="features">🔋 Features</a>
+### Installation <a name="installation"></a>
 
-👉 **Advanced Rate Limiting and Bot Protection**: with Arcjet that helps you secure the whole app.
-
-👉 **Database Modeling**: Models and relationships using MongoDB & Mongoose.
-
-👉 **JWT Authentication**: User CRUD operations and subscription management.
-
-👉 **Global Error Handling**: Input validation and middleware integration.
-
-👉 **Logging Mechanisms**: For better debugging and monitoring.
-
-👉 **Email Reminders**: Automating smart email reminders with workflows using Upstash.
-
-and many more, including code architecture and reusability
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
+1. Clone the repository
 
 ```bash
-git clone https://github.com/adrianhajdin/subscription-tracker-api.git
+git clone https://github.com/VihanTumbal/subscription-tracker-api.git
 cd subscription-tracker-api
 ```
 
-**Installation**
-
-Install the project dependencies using npm:
+2. Install dependencies
 
 ```bash
 npm install
 ```
 
-**Set Up Environment Variables**
+### Configuration <a name="configuration"></a>
 
-Create a new file named `.env.local` in the root of your project and add the following content:
+1. Create `.env.development.local` for development environment:
 
 ```env
-# PORT
-PORT=5500
-SERVER_URL="http://localhost:5500"
-
-# ENVIRONMENT
+# Server Configuration
+PORT=3000
 NODE_ENV=development
+SERVER_URL="http://localhost:3000"
 
-# DATABASE
-DB_URI=
+# Database
+DB_URI="your_mongodb_connection_string"
 
-# JWT AUTH
-JWT_SECRET=
+# Authentication
+JWT_SECRET="your_jwt_secret"
 JWT_EXPIRES_IN="1d"
 
-# ARCJET
-ARCJET_KEY=
-ARCJET_ENV="development"
+# Email Configuration
+EMAIL_PASSWORD="your_email_app_password"
 
-# UPSTASH
-QSTASH_URL=http://127.0.0.1:8080
-QSTASH_TOKEN=
-
-# NODEMAILER
-EMAIL_PASSWORD=
+# Upstash Configuration
+QSTASH_URL="your_qstash_url"
+QSTASH_TOKEN="your_qstash_token"
 ```
 
-**Running the Project**
+2. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5500](http://localhost:5500) in your browser or any HTTP client to test the project.
+## 📚 API Documentation <a name="api-documentation"></a>
+
+### Authentication Endpoints
+
+- `POST /api/v1/auth/register` - Register a new user
+- `POST /api/v1/auth/login` - User login
+- `POST /api/v1/auth/logout` - User logout
+
+### User Endpoints
+
+- `GET /api/v1/users/profile` - Get user profile
+- `PUT /api/v1/users/profile` - Update user profile
+
+### Subscription Endpoints
+
+- `GET /api/v1/subscriptions` - List all subscriptions
+- `POST /api/v1/subscriptions` - Create new subscription
+- `PUT /api/v1/subscriptions/:id` - Update subscription
+- `DELETE /api/v1/subscriptions/:id` - Cancel subscription
+
+## 📁 Project Structure <a name="structure"></a>
+
+```
+subscription-tracker-api/
+├── config/           # Configuration files
+├── controllers/      # Request handlers
+├── models/          # Database models
+├── routes/          # API routes
+├── middlewares/     # Custom middlewares
+├── utils/           # Utility functions
+├── services/        # Business logic
+└── tests/           # Test files
+```
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
