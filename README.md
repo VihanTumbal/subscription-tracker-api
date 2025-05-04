@@ -1,16 +1,3 @@
-<div align="center">
-  <br />
-    <a href="https://youtu.be/rOpEN1JDaD0?si=WfOjLV57WfR9x6QK" target="_blank">
-      <img src="https://i.ibb.co/xtTbHkfs/Readme-Thumbnail.png" alt="Project Banner">
-    </a>
-  <br />
-  
-  <div>
-    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="node.js" />
-    <img src="https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express.js" />
-    <img src="https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" />
-  </div>
-
   <h3 align="center">A Subscription Management System API</h3>
 
    <div align="center">
@@ -122,22 +109,3 @@ npm run dev
 ```
 
 Open [http://localhost:5500](http://localhost:5500) in your browser or any HTTP client to test the project.
-
-## <a name="snippets">🕸️ Snippets</a>
-
-<details>
-<summary><code>Dummy JSON Data</code></summary>
-
-```json
-{
-  "name": "Javascript Mastery Elite Membership",
-  "price": 139.0,
-  "currency": "USD",
-  "frequency": "monthly",
-  "category": "Entertainment",
-  "startDate": "2025-01-20T00:00:00.000Z",
-  "paymentMethod": "Credit Card"
-}
-```
-
-</details>
